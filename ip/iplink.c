@@ -37,6 +37,13 @@
 #define LIBDIR "/usr/lib/"
 #endif
 
+#ifndef IFF_NOMULTIPATH
+#define IFF_NOMULTIPATH	0x80000		/* Disable for MPTCP            */
+#define IFF_MPBACKUP	0x100000	/* Use as backup path for MPTCP */
+#define IFF_MPHANDOVER	0x200000	/* Use only when no other interface is
+					 * available for MPTCP */
+#endif
+
 static void usage(void) __attribute__((noreturn));
 static int iplink_have_newlink(void);
 

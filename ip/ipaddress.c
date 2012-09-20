@@ -34,6 +34,12 @@
 #include "ip_common.h"
 
 #define MAX_ROUNDS 10
+#ifndef IFF_NOMULTIPATH
+#define IFF_NOMULTIPATH	0x80000		/* Disable for MPTCP            */
+#define IFF_MPBACKUP	0x100000	/* Use as backup path for MPTCP */
+#define IFF_MPHANDOVER	0x200000	/* Use only when no other interface is
+					 * available for MPTCP */
+#endif
 
 static struct
 {
